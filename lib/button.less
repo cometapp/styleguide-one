@@ -1,0 +1,186 @@
+/**
+ * Buttons
+ */
+
+@btn-name: btn;
+
+@btn-border-padding: .6rem 1.8rem;
+@btn-border-padding-icon: 0.7rem 0.9rem 0.5rem;
+@btn-border-radius: 30px;
+@btn-border-width: 2px;
+
+/**
+ * Default buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--small">Button small</button>
+ * <button class="btn">Button</button>
+ * <button class="btn is-selected">Button selected</button>
+ * <button class="btn btn--big">Button big</button>
+ * </div>
+ * @code
+ * <button class="btn btn--small">Button small</button>
+ * <button class="btn">Button</button>
+ * <button class="btn is-selected">Button selected</button>
+ * <button class="btn btn--big">Button big</button>
+ */
+
+.@{btn-name} {
+	color: @color-link;
+	display: inline-block;
+	background: transparent;
+	border: @btn-border-width solid;
+	transition: .2s;
+	font-family: @font-family-2;
+	font-weight: @font-weight-3;
+	text-decoration: none;
+	padding: @btn-border-padding; 
+	border-radius: @btn-border-radius;
+}
+.@{btn-name}.is-selected,
+.@{btn-name}:hover,
+.@{btn-name}:focus {
+	color: @color-link-hover;
+}
+
+/**
+ * Button sizes
+ */
+.@{btn-name}--small {
+	font-size: @font-size-6;
+}
+.@{btn-name}--big {
+	font-size: @font-size-4;
+}
+
+/**
+ * Alternative buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--alt btn--small">Button small</button>
+ * <button class="btn btn--alt">Button</button>
+ * <button class="btn btn--alt is-selected">Button selected</button>
+ * <button class="btn btn--alt btn--big">Button big</button>
+ * </div>
+ * @code
+ * <button class="btn btn--alt btn--small">Button small</button>
+ * <button class="btn btn--alt">Button</button>
+ * <button class="btn btn--alt is-selected">Button selected</button>
+ * <button class="btn btn--alt btn--big">Button big</button>
+ */
+.@{btn-name}--alt {
+	color: @color-white;
+	border-color: @color-white;
+	background: @color-gradient1-a;
+	.gradient(linear, @color-gradient1-b, @color-gradient1-a, 0deg);
+	&.is-selected,
+	&:hover,
+	&:focus {
+		color: @color-gradient1-b;
+		border-color: @color-gradient1-b;
+		background: transparent;
+	}
+}
+
+/**
+ * Alert buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--alert btn--small">Button small</button>
+ * <button class="btn btn--alert">Button</button>
+ * <button class="btn btn--alert is-selected">Button selected</button>
+ * <button class="btn btn--alert btn--big">Button big</button>
+ * </div>
+ * @code
+ * <button class="btn btn--alert btn--small">Button small</button>
+ * <button class="btn btn--alert">Button</button>
+ * <button class="btn btn--alert is-selected">Button selected</button>
+ * <button class="btn btn--alert btn--big">Button big</button>
+ */
+.@{btn-name}--alert {
+	color: @color-alert;
+	border-color: @color-alert;
+	&.is-selected,
+	&:hover,
+	&:focus {
+		color: @color-alert-dark;
+		border-color: @color-alert-dark;
+	}
+}
+
+/**
+ * Simple buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--small btn--simple">Button small</button>
+ * <button class="btn btn--simple">Button</button>
+ * <button class="btn btn--simple is-selected">Button selected</button>
+ * <button class="btn btn--big btn--simple">Button big</button>
+ * </div>
+ * @code
+ * <button class="btn btn--small btn--simple">Button small</button>
+ * <button class="btn btn--simple">Button</button>
+ * <button class="btn btn--simple is-selected">Button selected</button>
+ * <button class="btn btn--big btn--simple">Button big</button>
+ */
+.@{btn-name}--simple {
+	background: transparent;
+	border: @btn-border-width solid transparent !important;
+}
+
+/**
+ * Icon buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--small btn--icon"><i class="icon icon--logo"></i></button>
+ * <button class="btn btn--icon"><i class="icon icon--logo"></i></button>
+ * <button class="btn btn--big btn--icon"><i class="icon icon--logo"></i></button>
+ * </div>
+ * @code
+ * <button class="btn btn--small btn--icon"><i class="icon icon--logo"></i></button>
+ * <button class="btn btn--icon"><i class="icon icon--logo"></i></button>
+ * <button class="btn btn--big btn--icon"><i class="icon icon--logo"></i></button>
+ */
+.@{btn-name}--icon {
+	padding: @btn-border-padding-icon;
+}
+
+/**
+ * Disabled buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--small is-disabled">Button small</button>
+ * <button class="btn is-disabled">Button</button>
+ * <button class="btn btn--big is-disabled">Button big</button>
+ * </div>
+ * @code
+ * <button class="btn btn--small is-disabled">Button small</button>
+ * <button class="btn is-disabled">Button</button>
+ * <button class="btn btn--big is-disabled">Button big</button>
+ */
+.@{btn-name}.is-disabled,
+.@{btn-name}.is-disabled:hover,
+.@{btn-name}.is-disabled:focus {
+	cursor: default !important;
+	color: @color-grey !important;
+	border-color: @color-grey !important;
+	background: transparent !important;
+}

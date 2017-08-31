@@ -1,0 +1,111 @@
+/**
+ * Grid
+ *
+ * Simple grid system. Doesn't add any padding.
+ *
+ * @section
+ * @sectionof Layout
+ * @code
+ * <div class="grid--1">grid--1</div>
+ * <div class="grid--2">grid--2</div>
+ * <div class="grid--3">grid--3</div>
+ * <div class="grid--4">grid--4</div>
+ * <div class="grid--6">grid--6</div>
+ * <div class="grid--8">grid--8</div>
+ * <div class="grid--10">grid--10</div>
+ * <div class="grid--12">grid--12</div>
+ * @example
+ * <div class="u-clear">
+ * 	<div class="grid--2 space--4 spaceY--2 u-textCenter theme--primary">grid--2</div>
+ * 	<div class="grid--2 space--4 spaceY--2 u-textCenter theme--black">grid--2</div>
+ * 	<div class="grid--2 space--4 spaceY--2 u-textCenter theme--primary">grid--2</div>
+ * 	<div class="grid--2 space--4 spaceY--2 u-textCenter theme--black">grid--2</div>
+ * 	<div class="grid--2 space--4 spaceY--2 u-textCenter theme--primary">grid--2</div>
+ * 	<div class="grid--2 space--4 spaceY--2 u-textCenter theme--black">grid--2</div>
+ * </div>
+ * <div class="u-clear spaceY--4">
+ * 	<div class="grid--4 space--4 spaceY--2 u-textCenter theme--black">grid--4</div>
+ * 	<div class="grid--4 space--4 spaceY--2 u-textCenter theme--primary">grid--4</div>
+ * 	<div class="grid--4 space--4 spaceY--2 u-textCenter theme--black">grid--4</div>
+ * </div>
+ * <div class="u-clear">
+ * 	<div class="grid--4 space--4 spaceY--2 u-textCenter theme--primary">grid--4</div>
+ * 	<div class="grid--8 space--4 spaceY--2 u-textCenter theme--black">grid--8</div>
+ * </div>
+ */
+
+// Grids
+.gen-grids();
+.gen-gridResponsive(@breakpoint-nb);
+
+// Containers
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 97rem;
+}
+@media (min-width: @breakpoint-2-from) {
+	.@{breakpoint-2}_container { width: 75rem; }
+}
+@media (min-width: @breakpoint-3-from) {
+	.@{breakpoint-3}_container { width: 97rem; }
+}
+@media (min-width: @breakpoint-4-from) {
+	.@{breakpoint-4}_container { width: 117rem; }
+}
+
+////////////////////////////////////////////////////// Mixings
+
+@grid-name: grid;
+
+// Generate all grids
+.gen-grids() {
+	.gen-grid(1);
+	.gen-grid(2);
+	.gen-grid(3);
+	.gen-grid(4);
+	.gen-grid(6);
+	.gen-grid(8);
+	.gen-grid(10);
+	.gen-grid(12);
+}
+
+// Generate all grids with responsive prefix
+.gen-gridPrefixes(@prefix) {
+	.gen-gridPrefix(1, @prefix);
+	.gen-gridPrefix(2, @prefix);
+	.gen-gridPrefix(3, @prefix);
+	.gen-gridPrefix(4, @prefix);
+	.gen-gridPrefix(6, @prefix);
+	.gen-gridPrefix(8, @prefix);
+	.gen-gridPrefix(10, @prefix);
+	.gen-gridPrefix(12, @prefix);
+}
+
+// Generate grid variations
+.gen-grid(@i) {
+	.@{grid-name}--@{i} {
+		.u-floatLeft;
+		.def-widthBase(@i, 12);
+		width: @width;
+	}
+}
+.gen-gridPrefix(@i, @prefix) {
+	.@{prefix}_@{grid-name}--@{i} {
+		.u-floatLeft;
+		.def-widthBase(@i, 12);
+		width: @width;
+	}
+}
+
+// Generate all responsive grids
+.gen-gridResponsive(@counter) when (@counter > 0) {
+	.gen-gridResponsive((@counter - 1));
+	@name: "breakpoint-@{counter}";
+	@name-to: "breakpoint-@{counter}-to";
+	@media (min-width: @@name-to) {
+		.gen-gridPrefixes(@@name);
+	}
+}

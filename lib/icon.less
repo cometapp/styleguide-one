@@ -1,0 +1,177 @@
+/**
+ * Icons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * ../fixtures/icons.html
+ * @code
+ * <i class="icon icon--logo"></i>
+ */
+
+@icon-font-dir: '../fonts/';
+@icon-name: icon;
+
+@font-face {
+	font-family: 'icon-comet';
+	src:	url('@{icon-font-dir}icon-comet.eot?jj163v');
+	src:	url('@{icon-font-dir}icon-comet.eot?jj163v#iefix') format('embedded-opentype'),
+		url('@{icon-font-dir}icon-comet.ttf?jj163v') format('truetype'),
+		url('@{icon-font-dir}icon-comet.woff?jj163v') format('woff'),
+		url('@{icon-font-dir}icon-comet.svg?jj163v#icon-comet') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.@{icon-name},
+.@{icon-name}-inside:before {
+	position: relative;
+	font-family: 'icon-comet' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Animations
+
+@-webkit-keyframes icon-spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+@keyframes icon-spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+.@{icon-name}-spin {
+	-webkit-animation: icon-spin 2s infinite linear;
+	animation: icon-spin 2s infinite linear;
+}
+
+// Codes (21/08/17)
+
+/* Aliases */
+.@{icon-name}--facebookAlt:before {
+	content: "\e91b";
+}
+.@{icon-name}--googlePlusAlt:before {
+	content: "\e921";
+}
+.@{icon-name}--polaroids:before {
+	content: "\e929";
+}
+.@{icon-name}--valid:before {
+	content: "\e90c";
+}
+.@{icon-name}--logoGoogle .path1:before {
+	content: "\e91d";
+	color: rgb(66, 133, 244);
+}
+.@{icon-name}--logoGoogle .path2:before {
+	content: "\e91e";
+	position: absolute;
+	margin-left: -1em;
+	color: rgb(52, 168, 83);
+}
+.@{icon-name}--logoGoogle .path3:before {
+	content: "\e91f";
+	position: absolute;
+	margin-left: -1em;
+	color: rgb(251, 188, 5);
+}
+.@{icon-name}--logoGoogle .path4:before {
+	content: "\e920";
+	position: absolute;
+	margin-left: -1em;
+	color: rgb(234, 67, 53);
+}
+.@{icon-name}--check-hlp {
+	content: "\e90c";
+}
+
+/* Codes */
+.@{icon-name}--album:before { content: "\e900"; }
+.@{icon-name}--albumAlt:before { content: "\e901"; }
+.@{icon-name}--arrowDown:before { content: "\e902"; }
+.@{icon-name}--arrowLeft:before { content: "\e903"; }
+.@{icon-name}--arrowRight:before { content: "\e904"; }
+.@{icon-name}--arrowUp:before { content: "\e905"; }
+.@{icon-name}--bell:before { content: "\e906"; }
+.@{icon-name}--bubble:before { content: "\e907"; }
+.@{icon-name}--bubbleAlt:before { content: "\e908"; }
+.@{icon-name}--burger:before { content: "\e909"; }
+.@{icon-name}--calendar:before { content: "\e90a"; }
+.@{icon-name}--cart:before { content: "\e90b"; }
+.@{icon-name}--check:before { content: "\e90c"; }
+.@{icon-name}--cross:before { content: "\e90d"; }
+.@{icon-name}--eye:before { content: "\e90e"; }
+.@{icon-name}--eyeCrossed:before { content: "\e90f"; }
+.@{icon-name}--film:before { content: "\e92b"; }
+.@{icon-name}--gallery:before { content: "\e910"; }
+.@{icon-name}--galleryAlt:before { content: "\e911"; }
+.@{icon-name}--grid:before { content: "\e912"; }
+.@{icon-name}--grid2:before { content: "\e913"; }
+.@{icon-name}--grid3:before { content: "\e914"; }
+.@{icon-name}--heart:before { content: "\e915"; }
+.@{icon-name}--heartAlt:before { content: "\e916"; }
+.@{icon-name}--kebab:before { content: "\e917"; }
+.@{icon-name}--key:before { content: "\e918"; }
+.@{icon-name}--lock:before { content: "\e919"; }
+.@{icon-name}--logo:before { content: "\e91a"; }
+.@{icon-name}--logoFacebook:before { content: "\e91b"; }
+.@{icon-name}--logoFacebookAlt:before { content: "\e943"; }
+.@{icon-name}--logoGoogle1:before { content: "\e91d"; }
+.@{icon-name}--logoGoogle2:before { content: "\e91e"; }
+.@{icon-name}--logoGoogle3:before { content: "\e91f"; }
+.@{icon-name}--logoGoogle4:before { content: "\e920"; }
+.@{icon-name}--logoGooglePlus:before { content: "\e921"; }
+.@{icon-name}--logoGooglePlusAlt:before { content: "\e922"; }
+.@{icon-name}--logoInstagramAlt:before { content: "\e925"; }
+.@{icon-name}--logoLinkedinAlt:before { content: "\e91c"; }
+.@{icon-name}--logoOrange:before { content: "\e923"; }
+.@{icon-name}--logoTwitter:before { content: "\e924"; }
+.@{icon-name}--logoTwitterAlt:before { content: "\e942"; }
+.@{icon-name}--mail:before { content: "\e926"; }
+.@{icon-name}--minus:before { content: "\e927"; }
+.@{icon-name}--navi:before { content: "\e93f"; }
+.@{icon-name}--naviAlt:before { content: "\e944"; }
+.@{icon-name}--pencil:before { content: "\e928"; }
+.@{icon-name}--photo:before { content: "\e929"; }
+.@{icon-name}--photoAlt:before { content: "\e92a"; }
+.@{icon-name}--picture:before { content: "\e93a"; }
+.@{icon-name}--pictureAlt:before { content: "\e93b"; }
+.@{icon-name}--pieChart:before { content: "\e92c"; }
+.@{icon-name}--plus:before { content: "\e92d"; }
+.@{icon-name}--power:before { content: "\e92e"; }
+.@{icon-name}--qrcode:before { content: "\e940"; }
+.@{icon-name}--search:before { content: "\e92f"; }
+.@{icon-name}--settings:before { content: "\e93c"; }
+.@{icon-name}--share:before { content: "\e930"; }
+.@{icon-name}--share2:before { content: "\e941"; }
+.@{icon-name}--sortDown:before { content: "\e93d"; }
+.@{icon-name}--sortUp:before { content: "\e93e"; }
+.@{icon-name}--time:before { content: "\e931"; }
+.@{icon-name}--timeDown:before { content: "\e932"; }
+.@{icon-name}--timeUp:before { content: "\e933"; }
+.@{icon-name}--trash:before { content: "\e934"; }
+.@{icon-name}--user:before { content: "\e935"; }
+.@{icon-name}--user2:before { content: "\e936"; }
+.@{icon-name}--user3:before { content: "\e937"; }
+.@{icon-name}--userAlt:before { content: "\e938"; }
+.@{icon-name}--wheel:before { content: "\e939"; }

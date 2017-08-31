@@ -1,0 +1,60 @@
+/**
+ * Width utility
+ */
+
+
+// Width base 100
+// > 10 base 100 => .u-width10 { width: 10% }
+.gen-width(@width-max, @width-step);
+.gen-widthResponsive(@width-max, @width-step, @breakpoint-nb);
+
+// Width base 12
+// > 3 base 12 => .u-width3b12 { width: 25%; }
+.gen-widthBase(2, 12);
+.gen-widthBase(3, 12);
+.gen-widthBase(4, 12);
+.gen-widthBase(6, 12);
+.gen-widthBase(8, 12);
+.gen-widthBase(10, 12);
+.gen-widthBase(12, 12);
+
+////////////////////////////////////////////////////// Mixings
+
+@width-name: width;
+
+// Define width relative to a base
+.def-widthBase(@i, @base) {
+	@width: (@i / @base) * 100%;
+}
+
+// Generate widths
+.gen-width(@max, @s, @i: 1) when (@i * @s =< @max) {
+	@v: @i*@s;
+	.def-widthBase(@v, 100);
+	.u-@{width-name}@{v} { width: @width; }
+	.gen-width(@max, @s, (@i + 1));
+}
+
+// Generate widths with responsive prefix
+.gen-widthPrefix(@max, @s, @prefix, @i: 1) when (@i * @s =< @max) {
+	@v: @i*@s;
+	.def-widthBase(@v, 100);
+	.@{prefix}_u-@{width-name}@{v} { width: @width; }
+	.gen-widthPrefix(@max, @s, @prefix, (@i + 1));
+}
+
+// Generate all responsive width
+.gen-widthResponsive(@max, @s, @counter) when (@counter > 0) {
+	.gen-widthResponsive(@max, @s, (@counter - 1));
+	@name: "breakpoint-@{counter}";
+	@name-to: "breakpoint-@{counter}-to";
+	@media (min-width: @@name-to) {
+		.gen-widthPrefix(@max, @s, @@name);
+	}
+}
+
+// Generate base relative widths
+.gen-widthBase(@i, @base) {
+	.def-widthBase(@i, @base);
+	.u-@{width-name}@{i}b@{base} { width: @width; }
+}

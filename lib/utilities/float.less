@@ -1,0 +1,45 @@
+/**
+ * Float utility
+ */
+
+.gen-float(left);
+.gen-float(right);
+.gen-floatResponsive(left, @breakpoint-nb);
+.gen-floatResponsive(right, @breakpoint-nb);
+
+.u-clear {
+	*zoom: 1;
+	zoom: 1;
+	&:before,
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+////////////////////////////////////////////////////// Mixings
+
+// Generate text positions
+.gen-float(@pos) {
+	@new-pos: e(`'@{pos}'.substring(0,1).toUpperCase()+'@{pos}'.substring(1)`);
+	.u-float@{new-pos} { float: @pos; }
+}
+.gen-floatPrefix(@position, @prefix) {
+	@new-pos: e(`'@{pos}'.substring(0,1).toUpperCase()+'@{pos}'.substring(1)`);
+	.@{prefix}_u-float@{new-pos} { float: @pos; }
+}
+
+// Generate all responsive text
+.gen-floatResponsive(@pos, @counter) when (@counter > 0) {
+	.gen-floatResponsive(@pos, (@counter - 1));
+	@name: "breakpoint-@{counter}";
+	@name-to: "breakpoint-@{counter}-to";
+	@media (min-width: @@name-to) {
+		.gen-floatPrefix(@pos, @@name);
+	}
+}

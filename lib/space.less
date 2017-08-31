@@ -1,0 +1,97 @@
+/**
+ * Spaces
+ *
+ * Used to add space to blocks.
+ *
+ * @section
+ * @sectionof Layout
+ * @example
+ * <div class="u-clear">
+ * 	<div class="u-inlineBlock space--1 u-textCenter theme--primary">space--1</div>
+ * 	<div class="u-inlineBlock space--2 u-textCenter theme--black">space--2</div>
+ * 	<div class="u-inlineBlock space--3 u-textCenter theme--primary">space--3</div>
+ * 	<div class="u-inlineBlock space--4 u-textCenter theme--black">space--4</div>
+ * 	<div class="u-inlineBlock space--5 u-textCenter theme--primary">space--5</div>
+ * </div>
+ * @code
+ * <div class="space--1">space--1</div>
+ * <div class="space--2">space--2</div>
+ * <div class="space--3">space--3</div>
+ * <div class="space--4">space--4</div>
+ * <div class="space--5">space--5</div>
+ */
+
+.gen-space(1, .5rem);
+.gen-space(2, 1rem);
+.gen-space(3, 2rem);
+.gen-space(4, 3.5rem);
+.gen-space(5, 5rem);
+
+////////////////////////////////////////////////////// Mixings
+
+@space-name: space;
+
+// Generate the spaces
+.gen-space(@name; @size) {
+	.@{space-name}--@{name} {
+		padding: @size;
+	}
+	.@{space-name}Y--@{name} {
+		padding-top: @size !important;
+		padding-bottom: @size !important;
+	}
+	.@{space-name}X--@{name} {
+		padding-left: @size !important;
+		padding-right: @size !important;
+	}
+	.@{space-name}Top--@{name} {
+		padding-top: @size !important;
+	}
+	.@{space-name}Bottom--@{name} {
+		padding-bottom: @size !important;
+	}
+	.@{space-name}Left--@{name} {
+		padding-left: @size !important;
+	}
+	.@{space-name}Right--@{name} {
+		padding-right: @size !important;
+	}
+	.gen-spaceResponsive(@name, @size, @breakpoint-nb);
+}
+
+// Generate the spaces with responsive prefix
+.gen-spacePrefix(@name, @size, @prefix) {
+	.@{prefix}_@{space-name}--@{name} {
+		padding: @size;
+	}
+	.@{prefix}_@{space-name}Y--@{name} {
+		padding-top: @size !important;
+		padding-bottom: @size !important;
+	}
+	.@{prefix}_@{space-name}X--@{name} {
+		padding-left: @size !important;
+		padding-right: @size !important;
+	}
+	.@{prefix}_@{space-name}Top--@{name} {
+		padding-top: @size !important;
+	}
+	.@{prefix}_@{space-name}Bottom--@{name} {
+		padding-bottom: @size !important;
+	}
+	.@{prefix}_@{space-name}Left--@{name} {
+		padding-left: @size !important;
+	}
+	.@{prefix}_@{space-name}Right--@{name} {
+		padding-right: @size !important;
+	}
+}
+
+// Generate all responsive spaces
+.gen-spaceResponsive(@name, @size, @counter) when (@counter > 0) {
+	.gen-spaceResponsive(@name, @size, (@counter - 1));
+	@prefix: "breakpoint-@{counter}";
+	@to: "breakpoint-@{counter}-to";
+	@media (min-width: @@to) {
+		.gen-spacePrefix(@name, @size, @@prefix);
+	}
+}

@@ -1,0 +1,15 @@
+/**
+ * Z-index utility
+ */
+
+.gen-zindex(@z-index-max, @z-index-step);
+
+////////////////////////////////////////////////////// Mixings
+
+@zindex-name: zindex;
+
+// Generate indexes
+.gen-zindex(@n, @s: 1, @i: 1) when (@i =< @n) {
+	.u-@{zindex-name}@{i} { z-index: @i * @s; }
+	.gen-zindex(@n, @s, (@i + 1));
+}

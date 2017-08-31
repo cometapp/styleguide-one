@@ -1,0 +1,150 @@
+/**
+ * Palettes
+ */
+
+@palette-nb: 5;
+@palette-1-alt-nb: 4;
+@palette-2-alt-nb: 2;
+@palette-3-alt-nb: 2;
+@palette-4-alt-nb: 2;
+@palette-5-alt-nb: 1;
+
+/**
+ * Color 1
+ *
+ * Description of the color 1.
+ * 
+ * @section
+ * @sectionof Colors
+ * @example
+ * <div class="u-clear">
+ * 	<div class="grid--12 space--4 spaceY--2 u-textCenter u-paletteBkg1 u-paletteTxtWhite">Palette1</div>
+ * 	<div class="grid--3 space--4 spaceY--2 u-textCenter u-paletteBkg1-1 u-paletteTxtWhite">Palette1-1</div>
+ * 	<div class="grid--3 space--4 spaceY--2 u-textCenter u-paletteBkg1-2 u-paletteTxtWhite">Palette1-2</div>
+ * 	<div class="grid--3 space--4 spaceY--2 u-textCenter u-paletteBkg1-3 u-paletteTxtWhite">Palette1-3</div>
+ * 	<div class="grid--3 space--4 spaceY--2 u-textCenter u-paletteBkg1-4 u-paletteTxtWhite">Palette1-4</div>
+ * </div>
+ * @hideCode
+ */
+@palette-1: #1f54c6;
+@palette-1-1: #1bcbf3;
+@palette-1-2: #0ca0fa;
+@palette-1-3: #374b91;
+@palette-1-4: #0c2153;
+
+/**
+ * Color 2
+ *
+ * Description of the color 2.
+ * 
+ * @section
+ * @sectionof Colors
+ * @example
+ * <div class="u-clear">
+ * 	<div class="grid--12 space--4 spaceY--2 u-textCenter u-paletteBkg2 u-paletteTxtWhite">Palette2</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg2-1 u-paletteTxtWhite">Palette2-1</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg2-2 u-paletteTxtWhite">Palette2-2</div>
+ * </div>
+ * @hideCode
+ */
+@palette-2: #FF2052;
+@palette-2-1: #ffa8c3;
+@palette-2-2: #a21d3b;
+
+
+/**
+ * Color 3
+ *
+ * Description of the color 3.
+ * 
+ * @section
+ * @sectionof Colors
+ * @example
+ * <div class="u-clear">
+ * 	<div class="grid--12 space--4 spaceY--2 u-textCenter u-paletteBkg3 u-paletteTxtWhite">Palette3</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg3-1 u-paletteTxtWhite">Palette3-1</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg3-2 u-paletteTxtWhite">Palette3-2</div>
+ * </div>
+ * @hideCode
+ */
+@palette-3: #9b9b9b;
+@palette-3-1: #d8d8d8;
+@palette-3-2: #909090;
+
+/**
+ * Color 4
+ *
+ * Description of the color 4.
+ * 
+ * @section
+ * @sectionof Colors
+ * @example
+ * <div class="u-clear">
+ * 	<div class="grid--12 space--4 spaceY--2 u-textCenter u-paletteBkg4">Palette4</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg4-1">Palette4-1</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg4-2">Palette4-2</div>
+ * </div>
+ * @hideCode
+ */
+@palette-4: #f4f4f4;
+@palette-4-1: #ffffff;
+@palette-4-2: #DEDEDE;
+@palette-4-3: #aEaEaE;
+@palette-4-4: #8E8E8E;
+
+/**
+ * Color 5
+ *
+ * Description of the color 5.
+ * 
+ * @section
+ * @sectionof Colors
+ * @example
+ * <div class="u-clear">
+ * 	<div class="grid--12 space--4 spaceY--2 u-textCenter u-paletteBkg5 u-paletteTxtWhite">Palette5</div>
+ * 	<div class="grid--6 space--4 spaceY--2 u-textCenter u-paletteBkg5-1 u-paletteTxtWhite">Palette5-1</div>
+ * </div>
+ * @hideCode
+ */
+@palette-5: #000000;
+@palette-5-1: #2E2E2E;
+
+/**
+ * Color helpers
+ *
+ * Once the palette is complete, we can define helpers to ease the use.
+ *
+ * @section
+ * @sectionof Colors
+ * @example
+ * <div class="u-clear">
+ * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--primary">Primary</div>
+ * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--secondary">Secondary</div>
+ * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--grey">Grey</div>
+ * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--white">White</div>
+ * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--black">Black</div>
+ * </div>
+ * @hideCode
+ */
+@color-primary: @palette-1;
+@color-primary-light: @palette-1-1;
+@color-primary-dark: @palette-1-4;
+
+@color-secondary: @palette-2;
+@color-secondary-light: @palette-2-1;
+@color-secondary-dark: @palette-2-2;
+
+@color-grey: @palette-3;
+@color-white: @palette-4;
+@color-black: @palette-5;
+
+@color-alert: @palette-2;
+@color-alert-light: @palette-2-1;
+@color-alert-dark: @palette-2-2;
+
+
+@color-gradient1-a: #1bcbf3;
+@color-gradient1-b: #0ca0fa;
+
+@color-gradient2-a: #1f54c6;
+@color-gradient2-b: #0c2153;

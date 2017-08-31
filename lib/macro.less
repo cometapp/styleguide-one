@@ -1,0 +1,191 @@
+/**
+ * Document-related properties
+ */
+
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	position: relative;
+	height: 100%;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	margin: 0;
+	font-family: @font-family-1;
+	font-size: @font-size-5;
+	font-weight: @font-weight-3;
+	.theme--white;
+}
+
+/**
+ * Headings
+ *
+ * Headings come with no margin.
+ *
+ * @section
+ * @sectionof Typography
+ * @example
+ * 	<h1 class="space--2">Placeholder text is sure a nice concept</h1>
+ * 	<div class="space--2 h--2">Placeholder text is sure a nice concept</div>
+ * 	<p class="space--2 h--3">Placeholder text is sure a nice concept</p>
+ * 	<h1 class="space--2 h--4">Placeholder text is sure a nice concept</h1>
+ * 	<h5 class="space--2">Placeholder text is sure a nice concept</h5>
+ * @code
+ * <h1>Placeholder text is sure a nice concept</h1>
+ * <div class="h--2">Placeholder text is sure a nice concept</div>
+ * <p class="h--3">Placeholder text is sure a nice concept</p>
+ * <h1 class="h--4">Placeholder text is sure a nice concept</h1>
+ * <h5>Placeholder text is sure a nice concept</h5>
+ */
+
+h1, .h--1,
+h2, .h--2,
+h3, .h--3,
+h4, .h--4,
+h5, .h--5 {
+	margin: 0;
+	font-family: @font-family-2;
+	font-weight: @font-weight-2;
+}
+h1, .h--1 {
+	font-size: @font-size-1;
+	line-height: @line-height-1;
+}
+h2, .h--2 {
+	font-size: @font-size-2;
+	line-height: @line-height-2;
+}
+h3, .h--3 {
+	font-size: @font-size-3;
+	line-height: @line-height-3;
+}
+h4, .h--4 {
+	font-size: @font-size-4;
+	line-height: @line-height-4;
+}
+h5, .h--5 {
+	font-size: @font-size-5;
+	line-height: @line-height-5;
+}
+
+@media (max-width: @breakpoint-1-to) {
+	h1, .h1,
+	h2, .h2 {
+		font-size: @font-size-3;
+	}
+	h3, .h3 {
+		font-size: @font-size-4;
+	}
+}
+
+@media (max-width: @breakpoint-2-to) {
+	h1, .h1 {
+		font-size: @font-size-2;
+	}
+}
+
+/**
+ * Paragraphs
+ *
+ * Paragraphs come with no margin.
+ *
+ * @section
+ * @sectionof Typography
+ * @example
+ *
+ * <p class="space--2">In computer programming, a placeholder is a <strong>character, word, or string</strong> of characters that may be used to take up space until such a time that the <em>space is needed</em>.</p>
+ * <div class="space--2 p">For example, <small>a programmer may know that she needs</small> a certain number of values or variables, but doesn't yet know what to input. She can use a placeholder as a temporary solution until a proper value or variable can be assigned.</div>
+ * @code
+ * <p>In computer programming, a placeholder is...</p>
+ * <div class="p">For example, a programmer...</div>
+ */
+
+p, .p {
+	margin: 0;
+	font-size: @font-size-4;
+	line-height: @line-height-4;
+}
+small {
+	font-size: @font-size-5;
+}
+strong,
+em,
+a {
+	white-space: nowrap;
+}
+a,
+button {
+	cursor: pointer;
+	font-size: inherit;
+}
+
+/**
+ * Lists
+ *
+ * Lists come with no margin.
+ *
+ * @section
+ * @sectionof Typography
+ * @example
+ * <div class="space--2 u-clear">
+ * 	<div class="grid--6"><ul><li>Liste 1</li><li>Liste 2</li><li>Liste 3</li><li>Liste 4</li></ul></div>
+ * 	<div class="grid--6"><ul class="ol"><li>Liste 1</li><li>Liste 2</li><li>Liste 3</li><li>Liste 4</li></ul></div>
+ * </div>
+ * @code
+ * <ul>
+ * 	<li>Liste 1</li>
+ * 	...
+ * </ul>
+ * <ul class="ol">
+ * 	<li>Liste 1</li>
+ * 	...
+ * </ul>
+ */
+
+ul, .ul {
+	list-style-type: disc;
+}
+ol, .ol {
+	list-style-type: decimal;
+}
+ul, .ul,
+ol, .ol {
+	margin: 0;
+	font-size: @font-size-4;
+}
+li {
+	margin-bottom: .8rem;
+	line-height: @line-height-4;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Links
+ *
+ * See more in Themes
+ */
+
+a, .a {
+	color: @color-link;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: .2s;
+}
+a:focus, .a:focus,
+a:focus, .a:focus {
+	color: @color-link-hover;
+}
+
+/**
+ * Images
+ */
+
+img {
+	max-width: 100%;
+}

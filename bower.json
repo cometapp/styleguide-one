@@ -1,0 +1,22 @@
+{
+  "name": "styleguide-one",
+  "description": "A styleguide driven approach to building a custom less library",
+  "authors": [
+    "Florent Hobein <florent@cometapp.io>"
+  ],
+  "license": "MIT",
+  "private": false,
+  "directory": "vendor/",
+  "ignore": [
+    "**/.*",
+    "**/_*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib"
+  ],
+  "dependencies": {
+    "normalize-css": "^7.0.0"
+  }
+}
