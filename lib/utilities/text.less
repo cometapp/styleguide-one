@@ -18,8 +18,9 @@
 .gen-textPosResponsive(right; @breakpoint-nb);
 
 // Size
-// .u-textSmall { font-size: @font-size-5; line-height: @line-height-5; }
-// .u-textBig { font-size: @font-size-3; line-height: @line-height-3; }
+.u-textExtraSmall { font-size: @font-size-6; line-height: @line-height-6; }
+.u-textSmall { font-size: @font-size-5; line-height: @line-height-5; }
+.u-textBig { font-size: @font-size-3; line-height: @line-height-3; }
 
 ////////////////////////////////////////////////////// Mixings
 
@@ -38,7 +39,7 @@
 	.gen-textPosResponsive(@pos; (@counter - 1));
 	@name: "breakpoint-@{counter}";
 	@name-to: "breakpoint-@{counter}-to";
-	@media (min-width: @@name-to) {
+	@media (max-width: @@name-to) {
 		.gen-textPosPrefix(@pos; @@name);
 	}
 }

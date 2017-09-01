@@ -21,11 +21,13 @@
  * <div class="space--5">space--5</div>
  */
 
-.gen-space(1, .5rem);
-.gen-space(2, 1rem);
-.gen-space(3, 2rem);
-.gen-space(4, 3.5rem);
 .gen-space(5, 5rem);
+.gen-space(4, 3.5rem);
+.gen-space(3, 2rem);
+.gen-space(2, 1rem);
+.gen-space(1, .5rem);
+.gen-space(0, 0);
+
 
 ////////////////////////////////////////////////////// Mixings
 
@@ -37,24 +39,24 @@
 		padding: @size;
 	}
 	.@{space-name}Y--@{name} {
-		padding-top: @size !important;
-		padding-bottom: @size !important;
+		padding-top: @size;
+		padding-bottom: @size;
 	}
 	.@{space-name}X--@{name} {
-		padding-left: @size !important;
-		padding-right: @size !important;
+		padding-left: @size;
+		padding-right: @size;
 	}
 	.@{space-name}Top--@{name} {
-		padding-top: @size !important;
+		padding-top: @size;
 	}
 	.@{space-name}Bottom--@{name} {
-		padding-bottom: @size !important;
+		padding-bottom: @size;
 	}
 	.@{space-name}Left--@{name} {
-		padding-left: @size !important;
+		padding-left: @size;
 	}
 	.@{space-name}Right--@{name} {
-		padding-right: @size !important;
+		padding-right: @size;
 	}
 	.gen-spaceResponsive(@name, @size, @breakpoint-nb);
 }
@@ -88,10 +90,10 @@
 
 // Generate all responsive spaces
 .gen-spaceResponsive(@name, @size, @counter) when (@counter > 0) {
-	.gen-spaceResponsive(@name, @size, (@counter - 1));
 	@prefix: "breakpoint-@{counter}";
 	@to: "breakpoint-@{counter}-to";
-	@media (min-width: @@to) {
+	@media (max-width: @@to) {
 		.gen-spacePrefix(@name, @size, @@prefix);
 	}
+	.gen-spaceResponsive(@name, @size, (@counter - 1));
 }
