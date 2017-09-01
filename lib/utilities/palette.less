@@ -17,8 +17,8 @@
 // Generate palette utils declinations
 .gen-palettes(@key: 1) when (@key =< @palette-nb) {
 	@color: "palette-@{key}";
-	.u-@{palette-txt-name}@{key} { color: @@color; }
-	.u-@{palette-bkg-name}@{key} { background-color: @@color; }
+	.u-@{palette-txt-name}@{key} { color: @@color !important; }
+	.u-@{palette-bkg-name}@{key} { background-color: @@color !important; background-image: none !important; }
 	@max: "palette-@{key}-alt-nb";
 	.gen-paletteAlt(@key; @@max);
 	.gen-palettes(@key+1)
@@ -28,13 +28,13 @@
 .gen-paletteAlt(@key; @counter) when (@counter > 0) {
 	.gen-paletteAlt(@key; (@counter - 1));
 	@color: "palette-@{key}-@{counter}";
-	.u-@{palette-txt-name}@{key}-@{counter} { color: @@color; }
-	.u-@{palette-bkg-name}@{key}-@{counter} { background-color: @@color; }
+	.u-@{palette-txt-name}@{key}-@{counter} { color: @@color !important; }
+	.u-@{palette-bkg-name}@{key}-@{counter} { background-color: @@color !important; background-image: none !important; }
 }
 
 // Generate a specific color
 .gen-paletteHlp(@name; @color) {
 	@new-name: e(`'@{name}'.substring(0,1).toUpperCase()+'@{name}'.substring(1)`);
-	.u-@{palette-txt-name}@{new-name} { color: @color; }
-	.u-@{palette-bkg-name}@{new-name} { background-color: @color; }
+	.u-@{palette-txt-name}@{new-name} { color: @color !important; }
+	.u-@{palette-bkg-name}@{new-name} { background-color: @color !important; background-image: none !important; }
 }

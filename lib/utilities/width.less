@@ -48,7 +48,7 @@
 	.gen-widthResponsive(@max; @s; (@counter - 1));
 	@name: "breakpoint-@{counter}";
 	@name-to: "breakpoint-@{counter}-to";
-	@media (min-width: @@name-to) {
+	@media (max-width: @@name-to) {
 		.gen-widthPrefix(@max; @s; @@name);
 	}
 }
