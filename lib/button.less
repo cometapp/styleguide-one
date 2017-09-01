@@ -90,16 +90,7 @@
  * <button class="btn btn--alert is-selected">Button selected</button>
  * <button class="btn btn--alert btn--big">Button big</button>
  */
-.@{btn-name}--alert {
-	color: @color-alert;
-	border-color: @color-alert;
-	&.is-selected,
-	&:hover,
-	&:focus {
-		color: @color-alert-dark;
-		border-color: @color-alert-dark;
-	}
-}
+ .gen-buttonAltColor(~"@{btn-name}--alert"; @color-white; @color-alert; @color-alert-dark);
 
 /**
  * Simple buttons
