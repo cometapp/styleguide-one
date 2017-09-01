@@ -40,20 +40,33 @@
 
 // Containers
 .container {
+	position: relative;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 15px;
 	padding-right: 15px;
-	width: 97rem;
 }
-@media (min-width: @breakpoint-2-from) {
-	.@{breakpoint-2}_container { width: 75rem; }
+@media (min-width: @breakpoint-1-to) {
+	.container { width: 75rem; }
 }
-@media (min-width: @breakpoint-3-from) {
-	.@{breakpoint-3}_container { width: 97rem; }
+@media (min-width: @breakpoint-2-to) {
+	.container { width: 97rem; }
 }
-@media (min-width: @breakpoint-4-from) {
-	.@{breakpoint-4}_container { width: 117rem; }
+@media (min-width: @breakpoint-3-to) {
+	.container { width: 117rem; }
+}
+
+// Flexbox
+.flexbox-center {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 }
 
 ////////////////////////////////////////////////////// Mixings
@@ -61,51 +74,45 @@
 @grid-name: grid;
 
 // Generate all grids
-.gen-grids() {
-	.gen-grid(1);
-	.gen-grid(2);
-	.gen-grid(3);
-	.gen-grid(4);
-	.gen-grid(6);
-	.gen-grid(8);
-	.gen-grid(10);
-	.gen-grid(12);
+.gen-grids(@counter: 12) when (@counter > 0) {
+	.gen-grids((@counter - 1));
+	.gen-grid(@counter);
 }
 
 // Generate all grids with responsive prefix
-.gen-gridPrefixes(@prefix) {
-	.gen-gridPrefix(1, @prefix);
-	.gen-gridPrefix(2, @prefix);
-	.gen-gridPrefix(3, @prefix);
-	.gen-gridPrefix(4, @prefix);
-	.gen-gridPrefix(6, @prefix);
-	.gen-gridPrefix(8, @prefix);
-	.gen-gridPrefix(10, @prefix);
-	.gen-gridPrefix(12, @prefix);
+.gen-gridPrefixes(@prefix; @counter: 12) when (@counter > 0) {
+	.gen-gridPrefixes(@prefix; (@counter - 1));
+	.gen-gridPrefix(@counter; @prefix);
 }
 
 // Generate grid variations
 .gen-grid(@i) {
+	.def-widthBase(@i; 12);
 	.@{grid-name}--@{i} {
-		.u-floatLeft;
-		.def-widthBase(@i, 12);
 		width: @width;
+		float: left;
+	}
+	.@{grid-name}-offset--@{i} {
+		margin-left: @width;
 	}
 }
-.gen-gridPrefix(@i, @prefix) {
+.gen-gridPrefix(@i; @prefix) {
+	.def-widthBase(@i; 12);
 	.@{prefix}_@{grid-name}--@{i} {
-		.u-floatLeft;
-		.def-widthBase(@i, 12);
 		width: @width;
+		float: left;
+	}
+	.@{prefix}_@{grid-name}-offset--@{i} {
+		margin-left: @width;
 	}
 }
 
-// Generate all responsive grids
+// Generate all responsive gridPrefixes
 .gen-gridResponsive(@counter) when (@counter > 0) {
-	.gen-gridResponsive((@counter - 1));
 	@name: "breakpoint-@{counter}";
 	@name-to: "breakpoint-@{counter}-to";
-	@media (min-width: @@name-to) {
+	@media (max-width: @@name-to) {
 		.gen-gridPrefixes(@@name);
 	}
+	.gen-gridResponsive((@counter - 1));
 }
