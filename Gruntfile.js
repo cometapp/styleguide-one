@@ -37,7 +37,8 @@ module.exports = function(grunt) {
 		watch: {
 			options: {
 				atBegin: true,
-				livereload: true
+				livereload: true,
+				livereload: 1337
 			},
 			less: {
 				files: ['./**/*.less'],
@@ -50,7 +51,7 @@ module.exports = function(grunt) {
 			website: {
 				options: {
 					hostname: 'localhost',
-					port: 9000,
+					port: 9001,
 					protocol: 'http',
 					base: 'styleguide',
 					livereload: true

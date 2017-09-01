@@ -140,4 +140,4 @@ npm install && bower install
 grunt
 ```
 
-The styleguide is available at the address `http://localhost:9000/`.
+The styleguide is available at the address `http://localhost:9001/`.
