@@ -1,21 +1,36 @@
 /**
- * Float utility
+ * Display utility
  */
 
-.u-block { display: block; }
+.u-show { display: block; }
 .u-hide { display: none; }
 .u-inlineBlock { display: inline-block; }
-
 .u-relative { position: relative; }
-
 .u-opacity1 { opacity: 1; }
 .u-opacity2 { opacity: .6; }
+.u-overflowHidden { overflow: hidden; }
 
-// .u-noMargin { margin: 0; }
+.gen-displayResponsive(@breakpoint-nb);
 
-// @media only screen and (max-width: 540px) {
-// 	.u-nocontainer-sm {
-// 		padding: 0;
-// 		width: auto;
-// 	}
-// }
+////////////////////////////////////////////////////// Mixings
+
+// Generate all responsive display
+.gen-displayResponsive(@counter) when (@counter > 0) {
+	.gen-displayResponsive((@counter - 1));
+	@name: "breakpoint-@{counter}";
+	@name-to: "breakpoint-@{counter}-to";
+	@media (max-width: @@name-to) {
+		.gen-displayPrefix(@@name);
+	}
+}
+
+// Generate display with responsive prefix
+.gen-displayPrefix(@prefix) {
+	.@{prefix}_u-show { display: block; }
+	.@{prefix}_u-hide { display: none; }
+	.@{prefix}_u-inlineBlock { display: inline-block; }
+	.@{prefix}_u-relative { position: relative; }
+	.@{prefix}_u-opacity1 { opacity: 1; }
+	.@{prefix}_u-opacity2 { opacity: .6; }
+	.@{prefix}_u-overflowHidden { overflow: hidden; }
+}

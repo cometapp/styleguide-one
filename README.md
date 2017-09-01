@@ -105,8 +105,8 @@ Categories:
 |---------|---------|--------|--------|
 | **xs**  | Phone   | -      | 767px  |
 | **sm**  | Tablet  | 768px  | 1023px |
-| **md*** | Laptop  | 1024px | 1279px |
-| **lg**  | Desktop | 1280px | 1679px |
+| **md*** | Laptop  | 1024px | 1269px |
+| **lg**  | Desktop | 1270px | 1679px |
 | **xl**  | Large   | 1680px | -      |
 
 **default*
