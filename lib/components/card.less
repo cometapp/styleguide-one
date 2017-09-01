@@ -9,6 +9,26 @@
 
 .card {
 	.theme--white;
+	background-color: @palette-4-1;
 	box-shadow: @box-shadow;
 	border-radius: @border-radius;
+}
+
+.card-co img {
+	width: 175px;
+}
+.card-co:first-child {
+	border-right: 1px dashed #9c9c9c;
+}
+@media only screen and (max-width: @breakpoint-1-to) {
+	.card-co:first-child {
+		border-right: none;
+		border-bottom: 1px dashed #9c9c9c;
+	}
+}
+@media only screen and (max-width: @breakpoint-2-to) {
+	.card-co img {
+		width: auto;
+		height: 200px;
+	}
 }

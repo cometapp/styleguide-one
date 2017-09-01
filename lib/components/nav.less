@@ -4,3 +4,41 @@
  * @section
  * @sectionof Components
  */
+
+.nav.is-fixed {
+	position: fixed;
+}
+.nav li {
+	float: left;
+	margin-left: 40px;
+	margin-bottom: 0;
+	list-style-type: none;
+}
+.nav-elt--right {
+	float: right;
+	margin-left: 8px;
+}
+
+.theme--light .logo {
+	background: #fff;
+}
+.theme--light .logo i {
+	color: #3595D6;
+}
+.nav-fixed-hide,
+.nav-fixed-show {
+	position: absolute;
+	transition: 200ms;
+}
+.nav-fixed-show,
+.nav.is-fixed .nav-fixed-hide {
+	z-index: 0;
+	opacity: 0;
+	padding-right: 20px;
+}
+.nav-fixed-hide,
+.nav.is-fixed .nav-fixed-show {
+	z-index: 10;
+	opacity: 1;
+	padding-right: 0;
+}

@@ -9,6 +9,11 @@
 @theme-white-paragraph: @color-paragraph;
 @theme-white-link: @color-link;
 @theme-white-link-hover: @color-link-hover;
+@theme-white-btn: @color-link;
+@theme-white-btn-hover: @color-link-hover;
+@theme-white-btn-alt: @palette-4-1;
+@theme-white-btn-alt-1: @color-gradient1-a;
+@theme-white-btn-alt-2: @color-gradient1-b;
 
 @theme-black-text: @color-white;
 @theme-black-paragraph: @color-grey;
@@ -20,13 +25,23 @@
 @theme-black-btn-alt-1: @palette-4-1;
 @theme-black-btn-alt-2: @palette-4-2;
 
+@theme-grey-text: @color-white;
+@theme-grey-paragraph: @color-grey;
+@theme-grey-link: @color-white;
+@theme-grey-link-hover: @color-primary-light;
+@theme-grey-btn: @color-white;
+@theme-grey-btn-hover: @color-primary-light;
+@theme-grey-btn-alt: @palette-5-1;
+@theme-grey-btn-alt-1: @palette-4-1;
+@theme-grey-btn-alt-2: @palette-4-2;
+
 @theme-primary-text: @color-white;
 @theme-primary-paragraph: @color-white;
 @theme-primary-link: @color-primary-light;
-@theme-primary-link-hover: @color-primary-dark;
-@theme-btn-primary: @color-primary-light;
-@theme-btn-primary-hover: @color-primary-dark;
-@theme-btn-primary-alt: @color-primary;
+@theme-primary-link-hover: @color-white;
+@theme-btn-primary: @color-white;
+@theme-btn-primary-hover: @color-primary-light;
+@theme-btn-primary-alt: @palette-1-4;
 @theme-btn-primary-alt-1: @palette-1-1;
 @theme-btn-primary-alt-2: @palette-1-2;
 
@@ -36,9 +51,65 @@
 @theme-secondary-link-hover: @color-secondary-light;
 @theme-btn-secondary: @color-secondary-dark;
 @theme-btn-secondary-hover: @color-white;
-@theme-btn-secondary-alt: @color-secondary;
+@theme-btn-secondary-alt: @palette-2-3;
 @theme-btn-secondary-alt-1: @color-white;
 @theme-btn-secondary-alt-2: @palette-2-1;
+
+/**
+ * Theme primary
+ *
+ * Description of theme primary
+ *
+ * @section
+ * @sectionof Themes
+ * @example
+ * <div class="space--4 theme--primary">
+ * 	<h3 class="u-textCenter">Theme primary</h3>
+ * 	<p class="spaceY--4">Tattoo savant silent construct franchise shanty town garage. Weathered geodesic girl warehouse <a href>youtube industrial</a> grade vinyl math-smart-cardboard stimulate decay artisanal. Shanty town tank-traps urban city BASE jump advert denim post. Vehicle refrigerator neon papier-mache city RAF bridge meta.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
+ * </div>
+ * @code
+ * <div class="theme--primary"></div>
+ */
+
+.theme--primary {
+	.gradient(linear; @palette-1-4, @palette-1; 0deg);
+	color: @theme-primary-text;
+	p, .p { color: @theme-primary-paragraph; }
+	a, .a { color: @theme-primary-link; }
+	a:focus, .a:focus,
+	a:hover, .a:hover { color: @theme-primary-link; border-bottom: 2px solid; }
+	.gen-buttonColor(@btn-name; @theme-btn-primary; @theme-btn-primary-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-btn-primary-alt; @theme-btn-primary-alt-1; @theme-btn-primary-alt-2);
+}
+
+/**
+ * Theme secondary
+ *
+ * Description of theme secondary
+ *
+ * @section
+ * @sectionof Themes
+ * @example
+ * <div class="space--4 theme--secondary">
+ * 	<h3 class="u-textCenter">Theme secondary</h3>
+ * 	<p class="spaceY--4">Shrine Legba denim girl shoes table long-chain hydrocarbons-ware Chiba. Systema disposable digital <a href>computer city kanji</a> meta. Bridge Tokyo sub-orbital Legba boat tanto woman table voodoo god face forwards vinyl physical courier. Augmented reality render-farm stimulate otaku crypto-rain artisanal silent.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
+ * </div>
+ * @code
+ * <div class="theme--secondary"></div>
+ */
+.theme--secondary {
+	.gradient(linear; @palette-2-3, @palette-2; 0deg);
+	// background-color: @color-secondary;
+	color: @theme-secondary-text;
+	p, .p { color: @theme-secondary-paragraph; }
+	a, .a { color: @theme-secondary-link; }
+	a:focus, .a:focus,
+	a:hover, .a:hover { color: @theme-secondary-link; border-bottom: 2px solid; }
+	.gen-buttonColor(@btn-name; @theme-btn-secondary; @theme-btn-secondary-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-btn-secondary-alt; @theme-btn-secondary-alt-1; @theme-btn-secondary-alt-2);
+}
 
 /**
  * Theme white
@@ -63,6 +134,9 @@
 	a, .a { color: @theme-white-link; }
 	a:focus, .a:focus,
 	a:hover, .a:hover { color: @theme-white-link-hover; }
+	.gen-buttonColor(@btn-name; @theme-white-btn; @theme-white-btn-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-white-btn-alt; @theme-white-btn-alt-1; @theme-white-btn-alt-2);
+	.gen-buttonAltColor(@btn-name-danger; @color-white; @color-danger; @color-danger-dark);
 }
 
 /**
@@ -87,62 +161,34 @@
 	p, .p { color: @theme-black-paragraph; }
 	a, .a { color: @theme-black-link; }
 	a:focus, .a:focus,
-	a:hover, .a:hover { color: @theme-black-link-hover; }
+	a:hover, .a:hover { color: @theme-black-link; border-bottom: 2px solid; }
 	.gen-buttonColor(@btn-name; @theme-black-btn; @theme-black-btn-hover);
 	.gen-buttonAltColor(@btn-name-alt; @theme-black-btn-alt; @theme-black-btn-alt-1; @theme-black-btn-alt-2);
 }
 
 /**
- * Theme primary
+ * Theme grey
  *
- * Description of theme primary
- *
- * @section
- * @sectionof Themes
- * @example
- * <div class="space--4 theme--primary">
- * 	<h3 class="u-textCenter">Theme primary</h3>
- * 	<p class="spaceY--4">Tattoo savant silent construct franchise shanty town garage. Weathered geodesic girl warehouse <a href>youtube industrial</a> grade vinyl math-smart-cardboard stimulate decay artisanal. Shanty town tank-traps urban city BASE jump advert denim post. Vehicle refrigerator neon papier-mache city RAF bridge meta.</p>
- * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
- * </div>
- * @code
- * <div class="theme--primary"></div>
- */
-
-.theme--primary {
-	background-color: @color-primary;
-	color: @theme-primary-text;
-	p, .p { color: @theme-primary-paragraph; }
-	a, .a { color: @theme-primary-link; }
-	a:focus, .a:focus,
-	a:hover, .a:hover { color: @theme-primary-link-hover; }
-	.gen-buttonColor(@btn-name; @theme-btn-primary; @theme-btn-primary-hover);
-	.gen-buttonAltColor(@btn-name-alt; @theme-btn-primary-alt; @theme-btn-primary-alt-1; @theme-btn-primary-alt-2);
-}
-
-/**
- * Theme secondary
- *
- * Description of theme secondary
+ * Description of theme grey
  *
  * @section
  * @sectionof Themes
  * @example
- * <div class="space--4 theme--secondary">
- * 	<h3 class="u-textCenter">Theme secondary</h3>
- * 	<p class="spaceY--4">Shrine Legba denim girl shoes table long-chain hydrocarbons-ware Chiba. Systema disposable digital <a href>computer city kanji</a> meta. Bridge Tokyo sub-orbital Legba boat tanto woman table voodoo god face forwards vinyl physical courier. Augmented reality render-farm stimulate otaku crypto-rain artisanal silent.</p>
+ * <div class="space--4 theme--grey">
+ * 	<h3 class="u-textCenter">Theme grey</h3>
+ * 	<p class="spaceY--4">Render-farm Chiba sign dissident warehouse concrete cardboard uplink tattoo decay sentient 8-bit. <a href>RAF A.I. sprawl city</a> nodality geodesic into courier human crypto-military-grade franchise towards. Monofilament nano-saturation point chrome towards RAF lights-space carbon. Advert stimulate vinyl towards sensory franchise network.</p>
  * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
- * <div class="theme--secondary"></div>
+ * <div class="theme--grey"></div>
  */
-.theme--secondary {
-	background-color: @color-secondary;
-	color: @theme-secondary-text;
-	p, .p { color: @theme-secondary-paragraph; }
-	a, .a { color: @theme-secondary-link; }
+.theme--grey {
+	background-color: @palette-5-1;
+	color: @theme-grey-text;
+	p, .p { color: @theme-grey-paragraph; }
+	a, .a { color: @theme-grey-link; }
 	a:focus, .a:focus,
-	a:hover, .a:hover { color: @theme-secondary-link-hover; }
-	.gen-buttonColor(@btn-name; @theme-btn-secondary; @theme-btn-secondary-hover);
-	.gen-buttonAltColor(@btn-name-alt; @theme-btn-secondary-alt; @theme-btn-secondary-alt-1; @theme-btn-secondary-alt-2);
+	a:hover, .a:hover { color: @theme-grey-link; border-bottom: 2px solid; }
+	.gen-buttonColor(@btn-name; @theme-grey-btn; @theme-grey-btn-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-grey-btn-alt; @theme-grey-btn-alt-1; @theme-grey-btn-alt-2);
 }
