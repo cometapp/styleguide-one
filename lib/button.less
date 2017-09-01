@@ -4,11 +4,18 @@
 
 @btn-name: btn;
 @btn-name-alt: btn--alt;
+@btn-name-danger: btn--danger;
 
-@btn-border-padding: .6rem 1.8rem;
-@btn-border-padding-icon: 0.7rem 0.9rem 0.5rem;
+@btn-padding: .8rem 2.2rem;
 @btn-border-radius: 30px;
 @btn-border-width: 2px;
+
+@btn-alt-padding: 1rem 2.6rem;
+
+@btn-icon-size: 4rem;
+@btn-icon-size-small: 3.5rem;
+@btn-icon-size-big: 4.5rem;
+@btn-icon-border-radius: 50%;
 
 /**
  * Default buttons
@@ -37,7 +44,7 @@
 	font-family: @font-family-2;
 	font-weight: @font-weight-3;
 	text-decoration: none;
-	padding: @btn-border-padding; 
+	padding: @btn-padding;
 	border-radius: @btn-border-radius;
 }
 .gen-buttonColor(@btn-name; @color-link; @color-link-hover);
@@ -70,27 +77,30 @@
  * <button class="btn btn--alt is-selected">Button selected</button>
  * <button class="btn btn--alt btn--big">Button big</button>
  */
-.gen-buttonAltColor(@btn-name-alt; @color-white; @color-gradient1-a; @color-gradient1-b);
+.@{btn-name-alt} {
+	padding: @btn-alt-padding;
+}
+.gen-buttonAltColor(@btn-name-alt; @palette-4-1; @color-gradient1-a; @color-gradient1-b);
 
 /**
- * Alert buttons
+ * Danger buttons
  *
  * @section
  * @sectionof Buttons & icons
  * @example
  * <div class="space--2">
- * <button class="btn btn--alert btn--small">Button small</button>
- * <button class="btn btn--alert">Button</button>
- * <button class="btn btn--alert is-selected">Button selected</button>
- * <button class="btn btn--alert btn--big">Button big</button>
+ * <button class="btn btn--danger btn--small">Button small</button>
+ * <button class="btn btn--danger">Button</button>
+ * <button class="btn btn--danger is-selected">Button selected</button>
+ * <button class="btn btn--danger btn--big">Button big</button>
  * </div>
  * @code
- * <button class="btn btn--alert btn--small">Button small</button>
- * <button class="btn btn--alert">Button</button>
- * <button class="btn btn--alert is-selected">Button selected</button>
- * <button class="btn btn--alert btn--big">Button big</button>
+ * <button class="btn btn--danger btn--small">Button small</button>
+ * <button class="btn btn--danger">Button</button>
+ * <button class="btn btn--danger is-selected">Button selected</button>
+ * <button class="btn btn--danger btn--big">Button big</button>
  */
- .gen-buttonAltColor(~"@{btn-name}--alert"; @color-white; @color-alert; @color-alert-dark);
+ .gen-buttonAltColor(@btn-name-danger; @color-white; @color-danger; @color-danger-dark);
 
 /**
  * Simple buttons
@@ -132,7 +142,22 @@
  * <button class="btn btn--big btn--icon"><i class="icon icon--logo"></i></button>
  */
 .@{btn-name}--icon {
-	padding: @btn-border-padding-icon;
+	text-align: center;
+	padding: 0;
+	width: @btn-icon-size;
+	height: @btn-icon-size;
+	line-height: @btn-icon-size;
+	border-radius: @btn-icon-border-radius;
+	&.@{btn-name}--small {
+		width: @btn-icon-size-small;
+		height: @btn-icon-size-small;
+		line-height: @btn-icon-size-small;
+	}
+	&.@{btn-name}--big {
+		width: @btn-icon-size-big;
+		height: @btn-icon-size-big;
+		line-height: @btn-icon-size-big;
+	}
 }
 
 /**
