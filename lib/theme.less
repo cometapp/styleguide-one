@@ -1,72 +1,148 @@
 /**
  * Themes
  *
- * Themes are color combinations that fit well together.
+ * Themes are global color combinations that fit well together. They are meant to modify the behavior of multiple elements, color-wise.
+ */
+
+
+@theme-white-text: @color-text;
+@theme-white-paragraph: @color-paragraph;
+@theme-white-link: @color-link;
+@theme-white-link-hover: @color-link-hover;
+
+@theme-black-text: @color-white;
+@theme-black-paragraph: @color-grey;
+@theme-black-link: @color-white;
+@theme-black-link-hover: @color-primary-light;
+@theme-black-btn: @color-white;
+@theme-black-btn-hover: @color-primary-light;
+@theme-black-btn-alt: @color-black;
+@theme-black-btn-alt-1: @palette-4-1;
+@theme-black-btn-alt-2: @palette-4-2;
+
+@theme-primary-text: @color-white;
+@theme-primary-paragraph: @color-white;
+@theme-primary-link: @color-primary-light;
+@theme-primary-link-hover: @color-primary-dark;
+@theme-btn-primary: @color-primary-light;
+@theme-btn-primary-hover: @color-primary-dark;
+@theme-btn-primary-alt: @color-primary;
+@theme-btn-primary-alt-1: @palette-1-1;
+@theme-btn-primary-alt-2: @palette-1-2;
+
+@theme-secondary-text: @color-white;
+@theme-secondary-paragraph: @color-white;
+@theme-secondary-link: @color-secondary-dark;
+@theme-secondary-link-hover: @color-secondary-light;
+@theme-btn-secondary: @color-secondary-dark;
+@theme-btn-secondary-hover: @color-white;
+@theme-btn-secondary-alt: @color-secondary;
+@theme-btn-secondary-alt-1: @color-white;
+@theme-btn-secondary-alt-2: @palette-2-1;
+
+/**
+ * Theme white
+ *
+ * Description of theme white
  *
  * @section
- * @sectionof Colors
+ * @sectionof Themes
  * @example
- * <div class="u-clear">
- * 	<p class="grid--6 space--4 spaceY--2 u-textCenter u-noMargin theme--white">Theme white<br /><a href>Button</a></p>
- * 	<p class="grid--6 space--4 spaceY--2 u-textCenter u-noMargin theme--black">Theme black<br /><a href>Button</a></p>
- * 	<p class="grid--6 space--4 spaceY--2 u-textCenter u-noMargin theme--primary">Theme primary<br /><a href>Button</a></p>
- * 	<p class="grid--6 space--4 spaceY--2 u-textCenter u-noMargin theme--secondary">Theme secondary<br /><a href>Button</a></p>
+ * <div class="space--4 theme--white">
+ * 	<h3 class="u-textCenter">Theme white</h3>
+ * 	<p class="spaceY--4">Tokyo papier-mache city dissident dolphin media warehouse A.I.. Realism warehouse neon weathered <a href>refrigerator numinous</a> tiger-team sprawl Shibuya dolphin Legba BASE jump systema post. Tiger-team sensory vinyl apophenia pistol otaku bomb bridge tanto geodesic. Chrome cardboard hotdog courier bomb face.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
  * <div class="theme--white"></div>
- * <div class="theme--black"></div>
- * <div class="theme--primary"></div>
- * <div class="theme--secondary"></div>
  */
+.theme--white {
+	background-color: @color-white;
+	color: @theme-white-text;
+	p, .p { color: @theme-white-paragraph; }
+	a, .a { color: @theme-white-link; }
+	a:focus, .a:focus,
+	a:hover, .a:hover { color: @theme-white-link-hover; }
+}
 
-@color-text: @color-black;
-@color-text-light: @color-white;
+/**
+ * Theme black
+ *
+ * Description of theme black
+ *
+ * @section
+ * @sectionof Themes
+ * @example
+ * <div class="space--4 theme--black">
+ * 	<h3 class="u-textCenter">Theme black</h3>
+ * 	<p class="spaceY--4">Render-farm Chiba sign dissident warehouse concrete cardboard uplink tattoo decay sentient 8-bit. <a href>RAF A.I. sprawl city</a> nodality geodesic into courier human crypto-military-grade franchise towards. Monofilament nano-saturation point chrome towards RAF lights-space carbon. Advert stimulate vinyl towards sensory franchise network.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
+ * </div>
+ * @code
+ * <div class="theme--black"></div>
+ */
+.theme--black {
+	background-color: @color-black;
+	color: @theme-black-text;
+	p, .p { color: @theme-black-paragraph; }
+	a, .a { color: @theme-black-link; }
+	a:focus, .a:focus,
+	a:hover, .a:hover { color: @theme-black-link-hover; }
+	.gen-buttonColor(@btn-name; @theme-black-btn; @theme-black-btn-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-black-btn-alt; @theme-black-btn-alt-1; @theme-black-btn-alt-2);
+}
 
-@color-link: @color-primary;
-@color-link-hover: @color-black;
-@color-link-visited: @color-black;
-
-@color-link-light: @color-primary;
-@color-link-light-hover: @color-white;
-
-@color-primary-link: @color-primary-light;
-@color-primary-link-hover: @color-primary-dark;
-
-@color-secondary-link: @color-secondary-dark;
-@color-secondary-link-hover: @color-secondary-light;
+/**
+ * Theme primary
+ *
+ * Description of theme primary
+ *
+ * @section
+ * @sectionof Themes
+ * @example
+ * <div class="space--4 theme--primary">
+ * 	<h3 class="u-textCenter">Theme primary</h3>
+ * 	<p class="spaceY--4">Tattoo savant silent construct franchise shanty town garage. Weathered geodesic girl warehouse <a href>youtube industrial</a> grade vinyl math-smart-cardboard stimulate decay artisanal. Shanty town tank-traps urban city BASE jump advert denim post. Vehicle refrigerator neon papier-mache city RAF bridge meta.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
+ * </div>
+ * @code
+ * <div class="theme--primary"></div>
+ */
 
 .theme--primary {
 	background-color: @color-primary;
-	color: @color-text-light;
-	a, .a { color: @color-primary-link; }
+	color: @theme-primary-text;
+	p, .p { color: @theme-primary-paragraph; }
+	a, .a { color: @theme-primary-link; }
 	a:focus, .a:focus,
-	a:hover, .a:hover { color: @color-primary-link-hover; }
+	a:hover, .a:hover { color: @theme-primary-link-hover; }
+	.gen-buttonColor(@btn-name; @theme-btn-primary; @theme-btn-primary-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-btn-primary-alt; @theme-btn-primary-alt-1; @theme-btn-primary-alt-2);
 }
+
+/**
+ * Theme secondary
+ *
+ * Description of theme secondary
+ *
+ * @section
+ * @sectionof Themes
+ * @example
+ * <div class="space--4 theme--secondary">
+ * 	<h3 class="u-textCenter">Theme secondary</h3>
+ * 	<p class="spaceY--4">Shrine Legba denim girl shoes table long-chain hydrocarbons-ware Chiba. Systema disposable digital <a href>computer city kanji</a> meta. Bridge Tokyo sub-orbital Legba boat tanto woman table voodoo god face forwards vinyl physical courier. Augmented reality render-farm stimulate otaku crypto-rain artisanal silent.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
+ * </div>
+ * @code
+ * <div class="theme--secondary"></div>
+ */
 .theme--secondary {
 	background-color: @color-secondary;
-	color: @color-text-light;
-	a, .a { color: @color-secondary-link; }
+	color: @theme-secondary-text;
+	p, .p { color: @theme-secondary-paragraph; }
+	a, .a { color: @theme-secondary-link; }
 	a:focus, .a:focus,
-	a:hover, .a:hover { color: @color-secondary-link-hover; }
-}
-.theme--white {
-	background-color: @color-white;
-	color: @color-text;
-	a, .a { color: @color-link; }
-	a:focus, .a:focus,
-	a:hover, .a:hover { color: @color-link-hover; }
-}
-.theme--grey {
-	background-color: @color-grey;
-	color: @color-text-light;
-	a, .a { color: @color-link; }
-	a:focus, .a:focus,
-	a:hover, .a:hover { color: @color-link-hover; }
-}
-.theme--black {
-	background-color: @color-black;
-	color: @color-text-light;
-	a, .a { color: @color-link-light; }
-	a:focus, .a:focus,
-	a:hover, .a:hover { color: @color-link-light-hover; }
+	a:hover, .a:hover { color: @theme-secondary-link-hover; }
+	.gen-buttonColor(@btn-name; @theme-btn-secondary; @theme-btn-secondary-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-btn-secondary-alt; @theme-btn-secondary-alt-1; @theme-btn-secondary-alt-2);
 }

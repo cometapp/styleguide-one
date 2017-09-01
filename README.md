@@ -118,19 +118,23 @@ Should have responsive sizes:
 - Utilities: float, display
 
 #### Examples
-`.md_spaceY`, ~~`.onlySm_grid--1`~~, `.md_container`, `.onlyLg_u-floatLeft`, `.xl_u-hide`
+`.md_spaceY`, ~~`.onlySm_grid--1`~~, `.md_container`, ~~`.onlyLg_u-floatLeft`,~~ `.xl_u-hide`
 
 ## Components
 
 > todo
 
-# Installation
+# Usage
+
+The idea of this project is not to be used 'as is', it should be forked and turned into a living, customised tool.
+
+### Installation
 
 ```shell
 npm install && bower install
 ```
 
-# Usage
+### Development
 
 ```shell
 grunt

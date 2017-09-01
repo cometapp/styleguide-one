@@ -13,9 +13,9 @@
 .gen-textPos(left);
 .gen-textPos(center);
 .gen-textPos(right);
-.gen-textPosResponsive(left, @breakpoint-nb);
-.gen-textPosResponsive(center, @breakpoint-nb);
-.gen-textPosResponsive(right, @breakpoint-nb);
+.gen-textPosResponsive(left; @breakpoint-nb);
+.gen-textPosResponsive(center; @breakpoint-nb);
+.gen-textPosResponsive(right; @breakpoint-nb);
 
 // Size
 // .u-textSmall { font-size: @font-size-5; line-height: @line-height-5; }
@@ -28,17 +28,17 @@
 	@new-pos: e(`'@{pos}'.substring(0,1).toUpperCase()+'@{pos}'.substring(1)`);
 	.u-text@{new-pos} { text-align: @pos; }
 }
-.gen-textPosPrefix(@position, @prefix) {
+.gen-textPosPrefix(@position; @prefix) {
 	@new-pos: e(`'@{pos}'.substring(0,1).toUpperCase()+'@{pos}'.substring(1)`);
 	.@{prefix}_u-text@{new-pos} { text-align: @pos; }
 }
 
 // Generate all responsive text
-.gen-textPosResponsive(@pos, @counter) when (@counter > 0) {
-	.gen-textPosResponsive(@pos, (@counter - 1));
+.gen-textPosResponsive(@pos; @counter) when (@counter > 0) {
+	.gen-textPosResponsive(@pos; (@counter - 1));
 	@name: "breakpoint-@{counter}";
 	@name-to: "breakpoint-@{counter}-to";
 	@media (min-width: @@name-to) {
-		.gen-textPosPrefix(@pos, @@name);
+		.gen-textPosPrefix(@pos; @@name);
 	}
 }

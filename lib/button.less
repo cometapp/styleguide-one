@@ -3,6 +3,7 @@
  */
 
 @btn-name: btn;
+@btn-name-alt: btn--alt;
 
 @btn-border-padding: .6rem 1.8rem;
 @btn-border-padding-icon: 0.7rem 0.9rem 0.5rem;
@@ -29,7 +30,6 @@
  */
 
 .@{btn-name} {
-	color: @color-link;
 	display: inline-block;
 	background: transparent;
 	border: @btn-border-width solid;
@@ -40,11 +40,7 @@
 	padding: @btn-border-padding; 
 	border-radius: @btn-border-radius;
 }
-.@{btn-name}.is-selected,
-.@{btn-name}:hover,
-.@{btn-name}:focus {
-	color: @color-link-hover;
-}
+.gen-buttonColor(@btn-name; @color-link; @color-link-hover);
 
 /**
  * Button sizes
@@ -74,19 +70,7 @@
  * <button class="btn btn--alt is-selected">Button selected</button>
  * <button class="btn btn--alt btn--big">Button big</button>
  */
-.@{btn-name}--alt {
-	color: @color-white;
-	border-color: @color-white;
-	background: @color-gradient1-a;
-	.gradient(linear, @color-gradient1-b, @color-gradient1-a, 0deg);
-	&.is-selected,
-	&:hover,
-	&:focus {
-		color: @color-gradient1-b;
-		border-color: @color-gradient1-b;
-		background: transparent;
-	}
-}
+.gen-buttonAltColor(@btn-name-alt; @color-white; @color-gradient1-a; @color-gradient1-b);
 
 /**
  * Alert buttons
@@ -183,4 +167,35 @@
 	color: @color-grey !important;
 	border-color: @color-grey !important;
 	background: transparent !important;
+}
+
+////////////////////////////////////////////////////// Mixings
+
+.gen-buttonColor(@btn-name; @colorText; @colorTextHover) {
+	.@{btn-name} {
+		color: @colorText;
+		border-color: @colorText;
+		&.is-selected,
+		&:hover,
+		&:focus {
+			color: @colorTextHover;
+			border-color: @colorTextHover;
+			background: transparent;
+		}
+	}
+}
+.gen-buttonAltColor(@name; @colorText; @colorGradient1; @colorGradient2) {
+	.@{name} {
+		color: @colorText;
+		border-color: @colorText;
+		background: @colorGradient1;
+		.gradient(linear, @colorGradient2, @colorGradient1, 0deg);
+		&.is-selected,
+		&:hover,
+		&:focus {
+			color: @colorGradient2;
+			border-color: @colorGradient2;
+			background: transparent;
+		}
+	}
 }

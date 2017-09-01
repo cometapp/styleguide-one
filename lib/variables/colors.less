@@ -118,11 +118,11 @@
  * @sectionof Colors
  * @example
  * <div class="u-clear">
- * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--primary">Primary</div>
- * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--secondary">Secondary</div>
- * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--grey">Grey</div>
- * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--white">White</div>
- * 	<div class="u-width20 u-floatLeft space--4 spaceY--2 u-textCenter theme--black">Black</div>
+ * 	<div class="u-width20 u-floatLeft spaceY--2 u-textCenter u-paletteBkgPrimary u-paletteTxtWhite">Primary</div>
+ * 	<div class="u-width20 u-floatLeft spaceY--2 u-textCenter u-paletteBkgSecondary u-paletteTxtWhite">Secondary</div>
+ * 	<div class="u-width20 u-floatLeft spaceY--2 u-textCenter u-paletteBkgGrey u-paletteTxtWhite">Grey</div>
+ * 	<div class="u-width20 u-floatLeft spaceY--2 u-textCenter u-paletteBkgWhite">White</div>
+ * 	<div class="u-width20 u-floatLeft spaceY--2 u-textCenter u-paletteBkgBlack u-paletteTxtWhite">Black</div>
  * </div>
  * @hideCode
  */
@@ -142,9 +142,19 @@
 @color-alert-light: @palette-2-1;
 @color-alert-dark: @palette-2-2;
 
-
 @color-gradient1-a: #1bcbf3;
 @color-gradient1-b: #0ca0fa;
 
 @color-gradient2-a: #1f54c6;
 @color-gradient2-b: #0c2153;
+
+/**
+ * Global color helpers
+ */
+
+@color-text: @color-black;
+@color-paragraph: @color-black;
+@color-link: @color-primary;
+@color-link-hover: @color-black;
+@color-btn: @color-primary;
+@color-btn-hover: @color-black;
