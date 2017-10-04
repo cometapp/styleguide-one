@@ -4,6 +4,7 @@
 
 @btn-name: btn;
 @btn-name-alt: btn--alt;
+@btn-name-success: btn--success;
 @btn-name-danger: btn--danger;
 
 @btn-padding: .8rem 2.2rem;
@@ -81,6 +82,26 @@
 	padding: @btn-alt-padding;
 }
 .gen-buttonAltColor(@btn-name-alt; @palette-4-1; @color-gradient1-a; @color-gradient1-b);
+
+/**
+ * Success buttons
+ *
+ * @section
+ * @sectionof Buttons & icons
+ * @example
+ * <div class="space--2">
+ * <button class="btn btn--success btn--small">Button small</button>
+ * <button class="btn btn--success">Button</button>
+ * <button class="btn btn--success is-selected">Button selected</button>
+ * <button class="btn btn--success btn--big">Button big</button>
+ * </div>
+ * @code
+ * <button class="btn btn--success btn--small">Button small</button>
+ * <button class="btn btn--success">Button</button>
+ * <button class="btn btn--success is-selected">Button selected</button>
+ * <button class="btn btn--success btn--big">Button big</button>
+ */
+ .gen-buttonAltColor(@btn-name-success; @color-white; @color-success; @color-success-dark);
 
 /**
  * Danger buttons

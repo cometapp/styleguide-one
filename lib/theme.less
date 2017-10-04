@@ -31,7 +31,7 @@
 @theme-grey-link-hover: @color-primary-light;
 @theme-grey-btn: @color-white;
 @theme-grey-btn-hover: @color-primary-light;
-@theme-grey-btn-alt: @palette-5-1;
+@theme-grey-btn-alt: @palette-5-2;
 @theme-grey-btn-alt-1: @palette-4-1;
 @theme-grey-btn-alt-2: @palette-4-2;
 
@@ -39,21 +39,31 @@
 @theme-primary-paragraph: @color-white;
 @theme-primary-link: @color-primary-light;
 @theme-primary-link-hover: @color-white;
-@theme-btn-primary: @color-white;
-@theme-btn-primary-hover: @color-primary-light;
-@theme-btn-primary-alt: @palette-1-4;
-@theme-btn-primary-alt-1: @palette-1-1;
-@theme-btn-primary-alt-2: @palette-1-2;
+@theme-primary-btn: @color-white;
+@theme-primary-btn-hover: @color-primary-light;
+@theme-primary-btn-alt: @palette-1-4;
+@theme-primary-btn-alt-1: @palette-1-1;
+@theme-primary-btn-alt-2: @palette-1-2;
 
 @theme-secondary-text: @color-white;
 @theme-secondary-paragraph: @color-white;
 @theme-secondary-link: @color-secondary-dark;
 @theme-secondary-link-hover: @color-secondary-light;
-@theme-btn-secondary: @color-secondary-dark;
-@theme-btn-secondary-hover: @color-white;
-@theme-btn-secondary-alt: @palette-2-3;
-@theme-btn-secondary-alt-1: @color-white;
-@theme-btn-secondary-alt-2: @palette-2-1;
+@theme-secondary-btn: @color-secondary-dark;
+@theme-secondary-btn-hover: @color-white;
+@theme-secondary-btn-alt: @palette-2-3;
+@theme-secondary-btn-alt-1: @color-white;
+@theme-secondary-btn-alt-2: @palette-2-1;
+
+@theme-tertiary-text: @color-white;
+@theme-tertiary-paragraph: @color-white;
+@theme-tertiary-link: @color-tertiary-dark;
+@theme-tertiary-link-hover: @color-tertiary-light;
+@theme-tertiary-btn: @color-tertiary-dark;
+@theme-tertiary-btn-hover: @color-white;
+@theme-tertiary-btn-alt: @palette-3;
+@theme-tertiary-btn-alt-1: @color-white;
+@theme-tertiary-btn-alt-2: @palette-3-1;
 
 /**
  * Theme primary
@@ -63,9 +73,9 @@
  * @section
  * @sectionof Themes
  * @example
- * <div class="space--4 theme--primary">
+ * <div class="space--5 theme--primary">
  * 	<h3 class="u-textCenter">Theme primary</h3>
- * 	<p class="spaceY--4">Tattoo savant silent construct franchise shanty town garage. Weathered geodesic girl warehouse <a href>youtube industrial</a> grade vinyl math-smart-cardboard stimulate decay artisanal. Shanty town tank-traps urban city BASE jump advert denim post. Vehicle refrigerator neon papier-mache city RAF bridge meta.</p>
+ * 	<p class="space--4">Tattoo savant silent construct franchise shanty town garage. Weathered geodesic girl warehouse <a href>youtube industrial</a> grade vinyl math-smart-cardboard stimulate decay artisanal. Shanty town tank-traps urban city BASE jump advert denim post. Vehicle refrigerator neon papier-mache city RAF bridge meta.</p>
  * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
@@ -79,8 +89,8 @@
 	a, .a { color: @theme-primary-link; }
 	a:focus, .a:focus,
 	a:hover, .a:hover { color: @theme-primary-link; border-bottom: 2px solid; }
-	.gen-buttonColor(@btn-name; @theme-btn-primary; @theme-btn-primary-hover);
-	.gen-buttonAltColor(@btn-name-alt; @theme-btn-primary-alt; @theme-btn-primary-alt-1; @theme-btn-primary-alt-2);
+	.gen-buttonColor(@btn-name; @theme-primary-btn; @theme-primary-btn-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-primary-btn-alt; @theme-primary-btn-alt-1; @theme-primary-btn-alt-2);
 }
 
 /**
@@ -91,9 +101,9 @@
  * @section
  * @sectionof Themes
  * @example
- * <div class="space--4 theme--secondary">
+ * <div class="space--5 theme--secondary">
  * 	<h3 class="u-textCenter">Theme secondary</h3>
- * 	<p class="spaceY--4">Shrine Legba denim girl shoes table long-chain hydrocarbons-ware Chiba. Systema disposable digital <a href>computer city kanji</a> meta. Bridge Tokyo sub-orbital Legba boat tanto woman table voodoo god face forwards vinyl physical courier. Augmented reality render-farm stimulate otaku crypto-rain artisanal silent.</p>
+ * 	<p class="space--4">Shrine Legba denim girl shoes table long-chain hydrocarbons-ware Chiba. Systema disposable digital <a href>computer city kanji</a> meta. Bridge Tokyo sub-orbital Legba boat tanto woman table voodoo god face forwards vinyl physical courier. Augmented reality render-farm stimulate otaku crypto-rain artisanal silent.</p>
  * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
@@ -107,8 +117,36 @@
 	a, .a { color: @theme-secondary-link; }
 	a:focus, .a:focus,
 	a:hover, .a:hover { color: @theme-secondary-link; border-bottom: 2px solid; }
-	.gen-buttonColor(@btn-name; @theme-btn-secondary; @theme-btn-secondary-hover);
-	.gen-buttonAltColor(@btn-name-alt; @theme-btn-secondary-alt; @theme-btn-secondary-alt-1; @theme-btn-secondary-alt-2);
+	.gen-buttonColor(@btn-name; @theme-secondary-btn; @theme-secondary-btn-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-secondary-btn-alt; @theme-secondary-btn-alt-1; @theme-secondary-btn-alt-2);
+}
+
+
+/**
+ * Theme tertiary
+ *
+ * Description of theme tertiary
+ *
+ * @section
+ * @sectionof Themes
+ * @example
+ * <div class="space--5 theme--tertiary">
+ * 	<h3 class="u-textCenter">Theme tertiary</h3>
+ * 	<p class="space--4">Shrine Legba denim girl shoes table long-chain hydrocarbons-ware Chiba. Systema disposable digital <a href>computer city kanji</a> meta. Bridge Tokyo sub-orbital Legba boat tanto woman table voodoo god face forwards vinyl physical courier. Augmented reality render-farm stimulate otaku crypto-rain artisanal silent.</p>
+ * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
+ * </div>
+ * @code
+ * <div class="theme--tertiary"></div>
+ */
+.theme--tertiary {
+	.gradient(linear; @palette-3, @palette-3-3; 0deg);
+	color: @theme-tertiary-text;
+	p, .p { color: @theme-tertiary-paragraph; }
+	a, .a { color: @theme-tertiary-link; }
+	a:focus, .a:focus,
+	a:hover, .a:hover { color: @theme-tertiary-link; border-bottom: 2px solid; }
+	.gen-buttonColor(@btn-name; @theme-tertiary-btn; @theme-tertiary-btn-hover);
+	.gen-buttonAltColor(@btn-name-alt; @theme-tertiary-btn-alt; @theme-tertiary-btn-alt-1; @theme-tertiary-btn-alt-2);
 }
 
 /**
@@ -119,9 +157,9 @@
  * @section
  * @sectionof Themes
  * @example
- * <div class="space--4 theme--white">
+ * <div class="space--5 theme--white">
  * 	<h3 class="u-textCenter">Theme white</h3>
- * 	<p class="spaceY--4">Tokyo papier-mache city dissident dolphin media warehouse A.I.. Realism warehouse neon weathered <a href>refrigerator numinous</a> tiger-team sprawl Shibuya dolphin Legba BASE jump systema post. Tiger-team sensory vinyl apophenia pistol otaku bomb bridge tanto geodesic. Chrome cardboard hotdog courier bomb face.</p>
+ * 	<p class="space--4">Tokyo papier-mache city dissident dolphin media warehouse A.I.. Realism warehouse neon weathered <a href>refrigerator numinous</a> tiger-team sprawl Shibuya dolphin Legba BASE jump systema post. Tiger-team sensory vinyl apophenia pistol otaku bomb bridge tanto geodesic. Chrome cardboard hotdog courier bomb face.</p>
  * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
@@ -136,6 +174,7 @@
 	a:hover, .a:hover { color: @theme-white-link-hover; }
 	.gen-buttonColor(@btn-name; @theme-white-btn; @theme-white-btn-hover);
 	.gen-buttonAltColor(@btn-name-alt; @theme-white-btn-alt; @theme-white-btn-alt-1; @theme-white-btn-alt-2);
+	.gen-buttonAltColor(@btn-name-success; @color-white; @color-success; @color-success-dark);
 	.gen-buttonAltColor(@btn-name-danger; @color-white; @color-danger; @color-danger-dark);
 }
 
@@ -147,9 +186,9 @@
  * @section
  * @sectionof Themes
  * @example
- * <div class="space--4 theme--black">
+ * <div class="space--5 theme--black">
  * 	<h3 class="u-textCenter">Theme black</h3>
- * 	<p class="spaceY--4">Render-farm Chiba sign dissident warehouse concrete cardboard uplink tattoo decay sentient 8-bit. <a href>RAF A.I. sprawl city</a> nodality geodesic into courier human crypto-military-grade franchise towards. Monofilament nano-saturation point chrome towards RAF lights-space carbon. Advert stimulate vinyl towards sensory franchise network.</p>
+ * 	<p class="space--4">Render-farm Chiba sign dissident warehouse concrete cardboard uplink tattoo decay sentient 8-bit. <a href>RAF A.I. sprawl city</a> nodality geodesic into courier human crypto-military-grade franchise towards. Monofilament nano-saturation point chrome towards RAF lights-space carbon. Advert stimulate vinyl towards sensory franchise network.</p>
  * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
@@ -174,16 +213,16 @@
  * @section
  * @sectionof Themes
  * @example
- * <div class="space--4 theme--grey">
+ * <div class="space--5 theme--grey">
  * 	<h3 class="u-textCenter">Theme grey</h3>
- * 	<p class="spaceY--4">Render-farm Chiba sign dissident warehouse concrete cardboard uplink tattoo decay sentient 8-bit. <a href>RAF A.I. sprawl city</a> nodality geodesic into courier human crypto-military-grade franchise towards. Monofilament nano-saturation point chrome towards RAF lights-space carbon. Advert stimulate vinyl towards sensory franchise network.</p>
+ * 	<p class="space--4">Render-farm Chiba sign dissident warehouse concrete cardboard uplink tattoo decay sentient 8-bit. <a href>RAF A.I. sprawl city</a> nodality geodesic into courier human crypto-military-grade franchise towards. Monofilament nano-saturation point chrome towards RAF lights-space carbon. Advert stimulate vinyl towards sensory franchise network.</p>
  * 	<p class="u-textCenter"><button class="btn">Read more</button> <button class="btn btn--alt">Read less</button></p>
  * </div>
  * @code
  * <div class="theme--grey"></div>
  */
 .theme--grey {
-	background-color: @palette-5-1;
+	background-color: @palette-5-2;
 	color: @theme-grey-text;
 	p, .p { color: @theme-grey-paragraph; }
 	a, .a { color: @theme-grey-link; }
